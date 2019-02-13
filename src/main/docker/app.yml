@@ -10,24 +10,12 @@ services:
             - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@sofpl-oracle:1521:SOFPL
             - JHIPSTER_SLEEP=30 # gives time for the JHipster Registry to boot before the application
             - SPRING_DATA_JEST_URI=http://sofpl-elasticsearch:9200
-            - SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS=kafka
-            - SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES=zookeeper
         ports:
             - 8080:8080
     sofpl-elasticsearch:
         extends:
             file: elasticsearch.yml
             service: sofpl-elasticsearch
-    kafka:
-        extends:
-            file: kafka.yml
-            service: kafka
-        environment:
-            - KAFKA_ADVERTISED_HOST_NAME=kafka
-    zookeeper:
-        extends:
-            file: kafka.yml
-            service: zookeeper
     jhipster-registry:
         extends:
             file: jhipster-registry.yml
