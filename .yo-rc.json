@@ -17,6 +17,7 @@
         "devDatabaseType": "h2Disk",
         "prodDatabaseType": "oracle",
         "searchEngine": "elasticsearch",
+        "messageBroker": "",
         "serviceDiscoveryType": "eureka",
         "buildTool": "maven",
         "enableSwaggerCodegen": true,
@@ -38,7 +39,6 @@
                 "version": "1.2.0"
             }
         ],
-        "enableTranslation": false,
-        "messageBroker": false
+        "enableTranslation": false
     }
 }
