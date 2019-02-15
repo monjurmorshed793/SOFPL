@@ -14,7 +14,7 @@
         "enableHibernateCache": false,
         "websocket": "spring-websocket",
         "databaseType": "sql",
-        "devDatabaseType": "h2Disk",
+        "devDatabaseType": "oracle",
         "prodDatabaseType": "oracle",
         "searchEngine": "elasticsearch",
         "messageBroker": "",
