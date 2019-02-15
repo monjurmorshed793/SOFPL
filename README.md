@@ -173,6 +173,33 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
+## Configuration for SOFPL project
+
+### Development Environment and Operating system
+
+Any os is supported. Hazelcast, sonar and other docker images are needed to run the project successfully. Windows 10 has an issue
+for docker, so restart docker when images are not pulled. It is not recommended to use docker-toolbox. It is not tested yet.
+If previously docker tool box was installed, please remove the DOCKER\_\*\*\*\* from the users path from windows advanced option.
+
+### Configuration of Oracle 18C database
+
+Oracle can be used from either docker or complete system installation. For docker, please refer to oracle docker page.
+
+#### Windows Based System
+
+Perform the following command for configuring oracle database. Please note, it is recommended that Oracle 18C is installed in the system. Also, install as desktop based db.
+
+    sqlplus /nolog
+    connect / as sysdba
+    create user db_iums_sofpl identified by ig100;
+    grant all privileges to db_iums_sofpl;
+
+Here we are using <b>db_iums_sofpl</b> as the database name and password <b>ig100</b>
+
+#### Unix Based System
+
+Please see the oracle command reference for windows.
+
 [jhipster homepage and latest documentation]: https://www.jhipster.tech
 [jhipster 5.8.1 archive]: https://www.jhipster.tech/documentation-archive/v5.8.1
 [using jhipster in development]: https://www.jhipster.tech/documentation-archive/v5.8.1/development/
