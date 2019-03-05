@@ -1,0 +1,74 @@
+{
+    "name": "PersonalInfo",
+    "fields": [
+        {
+            "fieldName": "employeeId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fathersName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mothersName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "maritalStatus",
+            "fieldType": "MaritalStatus",
+            "fieldValues": "MARRIED,UNMARRIED,SEPARATED"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Gender",
+            "fieldValues": "MALE,FEMALE,OTHERS"
+        },
+        {
+            "fieldName": "religion",
+            "fieldType": "Religion",
+            "fieldValues": "ISLAM,HINDU,BUDDHIST,CHRISTIANS,OTHERS"
+        },
+        {
+            "fieldName": "permanentAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "presentAddress",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "personalInfo",
+            "relationshipName": "department",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "designation",
+            "otherEntityRelationshipName": "personalInfo",
+            "relationshipName": "designation",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190305162919",
+    "entityTableName": "personal_info",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}

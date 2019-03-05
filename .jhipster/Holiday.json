@@ -1,0 +1,41 @@
+{
+    "name": "Holiday",
+    "fields": [
+        {
+            "fieldName": "year",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "HolidayType",
+            "fieldValues": "PUBLIC,PRIVATE"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "holidayCat",
+            "otherEntityRelationshipName": "holiday",
+            "relationshipName": "holidayCat",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190305160701",
+    "entityTableName": "holiday",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}

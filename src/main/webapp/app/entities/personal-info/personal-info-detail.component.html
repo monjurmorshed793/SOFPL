@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="personalInfo">
+            <h2><span>Personal Info</span> {{personalInfo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Employee Id</span></dt>
+                <dd>
+                    <span>{{personalInfo.employeeId}}</span>
+                </dd>
+                <dt><span>Full Name</span></dt>
+                <dd>
+                    <span>{{personalInfo.fullName}}</span>
+                </dd>
+                <dt><span>Fathers Name</span></dt>
+                <dd>
+                    <span>{{personalInfo.fathersName}}</span>
+                </dd>
+                <dt><span>Mothers Name</span></dt>
+                <dd>
+                    <span>{{personalInfo.mothersName}}</span>
+                </dd>
+                <dt><span>Birth Date</span></dt>
+                <dd>
+                    <span>{{personalInfo.birthDate}}</span>
+                </dd>
+                <dt><span>Marital Status</span></dt>
+                <dd>
+                    <span>{{personalInfo.maritalStatus}}</span>
+                </dd>
+                <dt><span>Gender</span></dt>
+                <dd>
+                    <span>{{personalInfo.gender}}</span>
+                </dd>
+                <dt><span>Religion</span></dt>
+                <dd>
+                    <span>{{personalInfo.religion}}</span>
+                </dd>
+                <dt><span>Permanent Address</span></dt>
+                <dd>
+                    <span>{{personalInfo.permanentAddress}}</span>
+                </dd>
+                <dt><span>Present Address</span></dt>
+                <dd>
+                    <span>{{personalInfo.presentAddress}}</span>
+                </dd>
+                <dt><span>Department</span></dt>
+                <dd>
+                    <div *ngIf="personalInfo.department">
+                        <a [routerLink]="['/department', personalInfo.department?.id, 'view']">{{personalInfo.department?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Designation</span></dt>
+                <dd>
+                    <div *ngIf="personalInfo.designation">
+                        <a [routerLink]="['/designation', personalInfo.designation?.id, 'view']">{{personalInfo.designation?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/personal-info', personalInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
