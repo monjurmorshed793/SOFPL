@@ -1,0 +1,83 @@
+entity Department{
+	name String,
+    shortName String
+}
+
+entity Designation{
+	name String,
+    shortName String,
+    description String
+}
+
+
+
+entity HolidayCat{
+	name String,
+    description String
+}
+
+entity Holiday{
+	year Integer,
+	type HolidayType,
+	startDate LocalDate,
+    endDate LocalDate
+}
+
+
+entity PersonalInfo{
+	employeeId String,
+    fullName String,
+    fathersName String,
+    mothersName String,
+    birthDate LocalDate,
+    maritalStatus MaritalStatus,
+    gender Gender,
+    religion Religion,
+    permanentAddress String,
+    presentAddress String
+}
+
+
+enum HolidayType{
+	PUBLIC, PRIVATE
+}
+
+enum MaritalStatus{
+	MARRIED, UNMARRIED, SEPARATED
+}
+
+enum Gender{
+	MALE, FEMALE, OTHERS
+}
+
+enum Religion{
+	ISLAM, HINDU, BUDDHIST, CHRISTIANS, OTHERS
+}
+
+relationship ManyToOne{
+    PersonalInfo{department} to Department
+}
+
+relationship ManyToOne{
+    Holiday{holidayCat} to HolidayCat
+}
+
+relationship ManyToOne{
+    PersonalInfo{designation} to Designation
+}
+
+
+paginate * with infinite-scroll
+search * with elasticsearch
+service * with serviceClass
+
+// Set pagination options
+
+//paginate Job with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+
+
