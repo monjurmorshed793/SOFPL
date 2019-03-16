@@ -23,6 +23,14 @@ import { RouterModule } from '@angular/router';
             {
                 path: 'personal-info',
                 loadChildren: './personal-info/personal-info.module#SofplPersonalInfoModule'
+            },
+            {
+                path: 'equipment',
+                loadChildren: './equipment/equipment.module#SofplEquipmentModule'
+            },
+            {
+                path: 'personal-info',
+                loadChildren: './personal-info/personal-info.module#SofplPersonalInfoModule'
             }
             /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
         ])

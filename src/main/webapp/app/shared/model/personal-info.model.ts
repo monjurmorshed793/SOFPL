@@ -34,6 +34,16 @@ export interface IPersonalInfo {
     religion?: Religion;
     permanentAddress?: string;
     presentAddress?: string;
+    nationalId?: string;
+    tinNumber?: string;
+    contactNumber?: string;
+    email?: string;
+    bloodGroup?: string;
+    emergencyContact?: string;
+    salary?: number;
+    photoId?: string;
+    bankAccount?: string;
+    remarks?: string;
     department?: IDepartment;
     designation?: IDesignation;
 }
@@ -51,6 +61,16 @@ export class PersonalInfo implements IPersonalInfo {
         public religion?: Religion,
         public permanentAddress?: string,
         public presentAddress?: string,
+        public nationalId?: string,
+        public tinNumber?: string,
+        public contactNumber?: string,
+        public email?: string,
+        public bloodGroup?: string,
+        public emergencyContact?: string,
+        public salary?: number,
+        public photoId?: string,
+        public bankAccount?: string,
+        public remarks?: string,
         public department?: IDepartment,
         public designation?: IDesignation
     ) {}

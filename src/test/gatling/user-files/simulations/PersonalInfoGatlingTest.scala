@@ -82,6 +82,16 @@ class PersonalInfoGatlingTest extends Simulation {
                 , "religion":"ISLAM"
                 , "permanentAddress":"SAMPLE_TEXT"
                 , "presentAddress":"SAMPLE_TEXT"
+                , "nationalId":"SAMPLE_TEXT"
+                , "tinNumber":"SAMPLE_TEXT"
+                , "contactNumber":"SAMPLE_TEXT"
+                , "email":"SAMPLE_TEXT"
+                , "bloodGroup":"SAMPLE_TEXT"
+                , "emergencyContact":"SAMPLE_TEXT"
+                , "salary":"0"
+                , "photoId":"SAMPLE_TEXT"
+                , "bankAccount":"SAMPLE_TEXT"
+                , "remarks":"SAMPLE_TEXT"
                 }""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_personalInfo_url"))).exitHereIfFailed

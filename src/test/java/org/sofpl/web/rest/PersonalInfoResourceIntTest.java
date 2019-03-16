@@ -26,6 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Validator;
 
 import javax.persistence.EntityManager;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Collections;
@@ -81,6 +82,36 @@ public class PersonalInfoResourceIntTest {
 
     private static final String DEFAULT_PRESENT_ADDRESS = "AAAAAAAAAA";
     private static final String UPDATED_PRESENT_ADDRESS = "BBBBBBBBBB";
+
+    private static final String DEFAULT_NATIONAL_ID = "AAAAAAAAAA";
+    private static final String UPDATED_NATIONAL_ID = "BBBBBBBBBB";
+
+    private static final String DEFAULT_TIN_NUMBER = "AAAAAAAAAA";
+    private static final String UPDATED_TIN_NUMBER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CONTACT_NUMBER = "AAAAAAAAAA";
+    private static final String UPDATED_CONTACT_NUMBER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_BLOOD_GROUP = "AAAAAAAAAA";
+    private static final String UPDATED_BLOOD_GROUP = "BBBBBBBBBB";
+
+    private static final String DEFAULT_EMERGENCY_CONTACT = "AAAAAAAAAA";
+    private static final String UPDATED_EMERGENCY_CONTACT = "BBBBBBBBBB";
+
+    private static final BigDecimal DEFAULT_SALARY = new BigDecimal(1);
+    private static final BigDecimal UPDATED_SALARY = new BigDecimal(2);
+
+    private static final String DEFAULT_PHOTO_ID = "AAAAAAAAAA";
+    private static final String UPDATED_PHOTO_ID = "BBBBBBBBBB";
+
+    private static final String DEFAULT_BANK_ACCOUNT = "AAAAAAAAAA";
+    private static final String UPDATED_BANK_ACCOUNT = "BBBBBBBBBB";
+
+    private static final String DEFAULT_REMARKS = "AAAAAAAAAA";
+    private static final String UPDATED_REMARKS = "BBBBBBBBBB";
 
     @Autowired
     private PersonalInfoRepository personalInfoRepository;
@@ -144,7 +175,17 @@ public class PersonalInfoResourceIntTest {
             .gender(DEFAULT_GENDER)
             .religion(DEFAULT_RELIGION)
             .permanentAddress(DEFAULT_PERMANENT_ADDRESS)
-            .presentAddress(DEFAULT_PRESENT_ADDRESS);
+            .presentAddress(DEFAULT_PRESENT_ADDRESS)
+            .nationalId(DEFAULT_NATIONAL_ID)
+            .tinNumber(DEFAULT_TIN_NUMBER)
+            .contactNumber(DEFAULT_CONTACT_NUMBER)
+            .email(DEFAULT_EMAIL)
+            .bloodGroup(DEFAULT_BLOOD_GROUP)
+            .emergencyContact(DEFAULT_EMERGENCY_CONTACT)
+            .salary(DEFAULT_SALARY)
+            .photoId(DEFAULT_PHOTO_ID)
+            .bankAccount(DEFAULT_BANK_ACCOUNT)
+            .remarks(DEFAULT_REMARKS);
         return personalInfo;
     }
 
@@ -178,6 +219,16 @@ public class PersonalInfoResourceIntTest {
         assertThat(testPersonalInfo.getReligion()).isEqualTo(DEFAULT_RELIGION);
         assertThat(testPersonalInfo.getPermanentAddress()).isEqualTo(DEFAULT_PERMANENT_ADDRESS);
         assertThat(testPersonalInfo.getPresentAddress()).isEqualTo(DEFAULT_PRESENT_ADDRESS);
+        assertThat(testPersonalInfo.getNationalId()).isEqualTo(DEFAULT_NATIONAL_ID);
+        assertThat(testPersonalInfo.getTinNumber()).isEqualTo(DEFAULT_TIN_NUMBER);
+        assertThat(testPersonalInfo.getContactNumber()).isEqualTo(DEFAULT_CONTACT_NUMBER);
+        assertThat(testPersonalInfo.getEmail()).isEqualTo(DEFAULT_EMAIL);
+        assertThat(testPersonalInfo.getBloodGroup()).isEqualTo(DEFAULT_BLOOD_GROUP);
+        assertThat(testPersonalInfo.getEmergencyContact()).isEqualTo(DEFAULT_EMERGENCY_CONTACT);
+        assertThat(testPersonalInfo.getSalary()).isEqualTo(DEFAULT_SALARY);
+        assertThat(testPersonalInfo.getPhotoId()).isEqualTo(DEFAULT_PHOTO_ID);
+        assertThat(testPersonalInfo.getBankAccount()).isEqualTo(DEFAULT_BANK_ACCOUNT);
+        assertThat(testPersonalInfo.getRemarks()).isEqualTo(DEFAULT_REMARKS);
 
         // Validate the PersonalInfo in Elasticsearch
         verify(mockPersonalInfoSearchRepository, times(1)).save(testPersonalInfo);
@@ -225,7 +276,17 @@ public class PersonalInfoResourceIntTest {
             .andExpect(jsonPath("$.[*].gender").value(hasItem(DEFAULT_GENDER.toString())))
             .andExpect(jsonPath("$.[*].religion").value(hasItem(DEFAULT_RELIGION.toString())))
             .andExpect(jsonPath("$.[*].permanentAddress").value(hasItem(DEFAULT_PERMANENT_ADDRESS.toString())))
-            .andExpect(jsonPath("$.[*].presentAddress").value(hasItem(DEFAULT_PRESENT_ADDRESS.toString())));
+            .andExpect(jsonPath("$.[*].presentAddress").value(hasItem(DEFAULT_PRESENT_ADDRESS.toString())))
+            .andExpect(jsonPath("$.[*].nationalId").value(hasItem(DEFAULT_NATIONAL_ID.toString())))
+            .andExpect(jsonPath("$.[*].tinNumber").value(hasItem(DEFAULT_TIN_NUMBER.toString())))
+            .andExpect(jsonPath("$.[*].contactNumber").value(hasItem(DEFAULT_CONTACT_NUMBER.toString())))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
+            .andExpect(jsonPath("$.[*].bloodGroup").value(hasItem(DEFAULT_BLOOD_GROUP.toString())))
+            .andExpect(jsonPath("$.[*].emergencyContact").value(hasItem(DEFAULT_EMERGENCY_CONTACT.toString())))
+            .andExpect(jsonPath("$.[*].salary").value(hasItem(DEFAULT_SALARY.intValue())))
+            .andExpect(jsonPath("$.[*].photoId").value(hasItem(DEFAULT_PHOTO_ID.toString())))
+            .andExpect(jsonPath("$.[*].bankAccount").value(hasItem(DEFAULT_BANK_ACCOUNT.toString())))
+            .andExpect(jsonPath("$.[*].remarks").value(hasItem(DEFAULT_REMARKS.toString())));
     }
     
     @Test
@@ -248,7 +309,17 @@ public class PersonalInfoResourceIntTest {
             .andExpect(jsonPath("$.gender").value(DEFAULT_GENDER.toString()))
             .andExpect(jsonPath("$.religion").value(DEFAULT_RELIGION.toString()))
             .andExpect(jsonPath("$.permanentAddress").value(DEFAULT_PERMANENT_ADDRESS.toString()))
-            .andExpect(jsonPath("$.presentAddress").value(DEFAULT_PRESENT_ADDRESS.toString()));
+            .andExpect(jsonPath("$.presentAddress").value(DEFAULT_PRESENT_ADDRESS.toString()))
+            .andExpect(jsonPath("$.nationalId").value(DEFAULT_NATIONAL_ID.toString()))
+            .andExpect(jsonPath("$.tinNumber").value(DEFAULT_TIN_NUMBER.toString()))
+            .andExpect(jsonPath("$.contactNumber").value(DEFAULT_CONTACT_NUMBER.toString()))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
+            .andExpect(jsonPath("$.bloodGroup").value(DEFAULT_BLOOD_GROUP.toString()))
+            .andExpect(jsonPath("$.emergencyContact").value(DEFAULT_EMERGENCY_CONTACT.toString()))
+            .andExpect(jsonPath("$.salary").value(DEFAULT_SALARY.intValue()))
+            .andExpect(jsonPath("$.photoId").value(DEFAULT_PHOTO_ID.toString()))
+            .andExpect(jsonPath("$.bankAccount").value(DEFAULT_BANK_ACCOUNT.toString()))
+            .andExpect(jsonPath("$.remarks").value(DEFAULT_REMARKS.toString()));
     }
 
     @Test
@@ -283,7 +354,17 @@ public class PersonalInfoResourceIntTest {
             .gender(UPDATED_GENDER)
             .religion(UPDATED_RELIGION)
             .permanentAddress(UPDATED_PERMANENT_ADDRESS)
-            .presentAddress(UPDATED_PRESENT_ADDRESS);
+            .presentAddress(UPDATED_PRESENT_ADDRESS)
+            .nationalId(UPDATED_NATIONAL_ID)
+            .tinNumber(UPDATED_TIN_NUMBER)
+            .contactNumber(UPDATED_CONTACT_NUMBER)
+            .email(UPDATED_EMAIL)
+            .bloodGroup(UPDATED_BLOOD_GROUP)
+            .emergencyContact(UPDATED_EMERGENCY_CONTACT)
+            .salary(UPDATED_SALARY)
+            .photoId(UPDATED_PHOTO_ID)
+            .bankAccount(UPDATED_BANK_ACCOUNT)
+            .remarks(UPDATED_REMARKS);
 
         restPersonalInfoMockMvc.perform(put("/api/personal-infos")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -304,6 +385,16 @@ public class PersonalInfoResourceIntTest {
         assertThat(testPersonalInfo.getReligion()).isEqualTo(UPDATED_RELIGION);
         assertThat(testPersonalInfo.getPermanentAddress()).isEqualTo(UPDATED_PERMANENT_ADDRESS);
         assertThat(testPersonalInfo.getPresentAddress()).isEqualTo(UPDATED_PRESENT_ADDRESS);
+        assertThat(testPersonalInfo.getNationalId()).isEqualTo(UPDATED_NATIONAL_ID);
+        assertThat(testPersonalInfo.getTinNumber()).isEqualTo(UPDATED_TIN_NUMBER);
+        assertThat(testPersonalInfo.getContactNumber()).isEqualTo(UPDATED_CONTACT_NUMBER);
+        assertThat(testPersonalInfo.getEmail()).isEqualTo(UPDATED_EMAIL);
+        assertThat(testPersonalInfo.getBloodGroup()).isEqualTo(UPDATED_BLOOD_GROUP);
+        assertThat(testPersonalInfo.getEmergencyContact()).isEqualTo(UPDATED_EMERGENCY_CONTACT);
+        assertThat(testPersonalInfo.getSalary()).isEqualTo(UPDATED_SALARY);
+        assertThat(testPersonalInfo.getPhotoId()).isEqualTo(UPDATED_PHOTO_ID);
+        assertThat(testPersonalInfo.getBankAccount()).isEqualTo(UPDATED_BANK_ACCOUNT);
+        assertThat(testPersonalInfo.getRemarks()).isEqualTo(UPDATED_REMARKS);
 
         // Validate the PersonalInfo in Elasticsearch
         verify(mockPersonalInfoSearchRepository, times(1)).save(testPersonalInfo);
@@ -372,7 +463,17 @@ public class PersonalInfoResourceIntTest {
             .andExpect(jsonPath("$.[*].gender").value(hasItem(DEFAULT_GENDER.toString())))
             .andExpect(jsonPath("$.[*].religion").value(hasItem(DEFAULT_RELIGION.toString())))
             .andExpect(jsonPath("$.[*].permanentAddress").value(hasItem(DEFAULT_PERMANENT_ADDRESS)))
-            .andExpect(jsonPath("$.[*].presentAddress").value(hasItem(DEFAULT_PRESENT_ADDRESS)));
+            .andExpect(jsonPath("$.[*].presentAddress").value(hasItem(DEFAULT_PRESENT_ADDRESS)))
+            .andExpect(jsonPath("$.[*].nationalId").value(hasItem(DEFAULT_NATIONAL_ID)))
+            .andExpect(jsonPath("$.[*].tinNumber").value(hasItem(DEFAULT_TIN_NUMBER)))
+            .andExpect(jsonPath("$.[*].contactNumber").value(hasItem(DEFAULT_CONTACT_NUMBER)))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
+            .andExpect(jsonPath("$.[*].bloodGroup").value(hasItem(DEFAULT_BLOOD_GROUP)))
+            .andExpect(jsonPath("$.[*].emergencyContact").value(hasItem(DEFAULT_EMERGENCY_CONTACT)))
+            .andExpect(jsonPath("$.[*].salary").value(hasItem(DEFAULT_SALARY.intValue())))
+            .andExpect(jsonPath("$.[*].photoId").value(hasItem(DEFAULT_PHOTO_ID)))
+            .andExpect(jsonPath("$.[*].bankAccount").value(hasItem(DEFAULT_BANK_ACCOUNT)))
+            .andExpect(jsonPath("$.[*].remarks").value(hasItem(DEFAULT_REMARKS)));
     }
 
     @Test

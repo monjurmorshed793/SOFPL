@@ -40,6 +40,16 @@
             <th jhiSortBy="religion"><span>Religion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="permanentAddress"><span>Permanent Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="presentAddress"><span>Present Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nationalId"><span>National Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tinNumber"><span>Tin Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contactNumber"><span>Contact Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span>Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bloodGroup"><span>Blood Group</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="emergencyContact"><span>Emergency Contact</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="salary"><span>Salary</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="photoId"><span>Photo Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bankAccount"><span>Bank Account</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remarks"><span>Remarks</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="department.id"><span>Department</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="designation.id"><span>Designation</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
@@ -58,6 +68,16 @@
                 <td>{{personalInfo.religion}}</td>
                 <td>{{personalInfo.permanentAddress}}</td>
                 <td>{{personalInfo.presentAddress}}</td>
+                <td>{{personalInfo.nationalId}}</td>
+                <td>{{personalInfo.tinNumber}}</td>
+                <td>{{personalInfo.contactNumber}}</td>
+                <td>{{personalInfo.email}}</td>
+                <td>{{personalInfo.bloodGroup}}</td>
+                <td>{{personalInfo.emergencyContact}}</td>
+                <td>{{personalInfo.salary}}</td>
+                <td>{{personalInfo.photoId}}</td>
+                <td>{{personalInfo.bankAccount}}</td>
+                <td>{{personalInfo.remarks}}</td>
                 <td>
                     <div *ngIf="personalInfo.department">
                         <a [routerLink]="['../department', personalInfo.department?.id, 'view' ]" >{{personalInfo.department?.id}}</a>

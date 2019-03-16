@@ -61,6 +61,46 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="national_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tin_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contact_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="email" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="blood_group" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="emergency_contact" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="salary" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="photo_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bank_account" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="remarks" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
             <column name="department_id" type="bigint">
                 <constraints nullable="true" />
             </column>

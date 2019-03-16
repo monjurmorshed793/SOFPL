@@ -36,6 +36,16 @@ describe('Service Tests', () => {
                 Gender.MALE,
                 Religion.ISLAM,
                 'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                0,
+                'AAAAAAA',
+                'AAAAAAA',
                 'AAAAAAA'
             );
         });
@@ -91,7 +101,17 @@ describe('Service Tests', () => {
                         gender: 'BBBBBB',
                         religion: 'BBBBBB',
                         permanentAddress: 'BBBBBB',
-                        presentAddress: 'BBBBBB'
+                        presentAddress: 'BBBBBB',
+                        nationalId: 'BBBBBB',
+                        tinNumber: 'BBBBBB',
+                        contactNumber: 'BBBBBB',
+                        email: 'BBBBBB',
+                        bloodGroup: 'BBBBBB',
+                        emergencyContact: 'BBBBBB',
+                        salary: 1,
+                        photoId: 'BBBBBB',
+                        bankAccount: 'BBBBBB',
+                        remarks: 'BBBBBB'
                     },
                     elemDefault
                 );
@@ -122,7 +142,17 @@ describe('Service Tests', () => {
                         gender: 'BBBBBB',
                         religion: 'BBBBBB',
                         permanentAddress: 'BBBBBB',
-                        presentAddress: 'BBBBBB'
+                        presentAddress: 'BBBBBB',
+                        nationalId: 'BBBBBB',
+                        tinNumber: 'BBBBBB',
+                        contactNumber: 'BBBBBB',
+                        email: 'BBBBBB',
+                        bloodGroup: 'BBBBBB',
+                        emergencyContact: 'BBBBBB',
+                        salary: 1,
+                        photoId: 'BBBBBB',
+                        bankAccount: 'BBBBBB',
+                        remarks: 'BBBBBB'
                     },
                     elemDefault
                 );

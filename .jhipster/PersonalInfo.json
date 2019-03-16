@@ -1,5 +1,24 @@
 {
-    "name": "PersonalInfo",
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "personalInfo",
+            "relationshipName": "department",
+            "otherEntityField": "id",
+            "otherEntityRelationshipNameUndefined": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "designation",
+            "otherEntityRelationshipName": "personalInfo",
+            "relationshipName": "designation",
+            "otherEntityField": "id",
+            "otherEntityRelationshipNameUndefined": false
+        }
+    ],
     "fields": [
         {
             "fieldName": "employeeId",
@@ -43,32 +62,55 @@
         {
             "fieldName": "presentAddress",
             "fieldType": "String"
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "department",
-            "otherEntityRelationshipName": "personalInfo",
-            "relationshipName": "department",
-            "otherEntityField": "id"
         },
         {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "designation",
-            "otherEntityRelationshipName": "personalInfo",
-            "relationshipName": "designation",
-            "otherEntityField": "id"
+            "fieldName": "nationalId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tinNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "bloodGroup",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "emergencyContact",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "salary",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "photoId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bankAccount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "remarks",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20190305162919",
-    "entityTableName": "personal_info",
     "dto": "no",
-    "pagination": "infinite-scroll",
+    "searchEngine": "elasticsearch",
     "service": "serviceClass",
+    "entityTableName": "personal_info",
+    "databaseType": "sql",
     "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": "*",
-    "searchEngine": "elasticsearch"
+    "pagination": "infinite-scroll"
 }

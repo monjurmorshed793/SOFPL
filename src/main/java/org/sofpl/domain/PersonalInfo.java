@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -63,6 +64,36 @@ public class PersonalInfo implements Serializable {
 
     @Column(name = "present_address")
     private String presentAddress;
+
+    @Column(name = "national_id")
+    private String nationalId;
+
+    @Column(name = "tin_number")
+    private String tinNumber;
+
+    @Column(name = "contact_number")
+    private String contactNumber;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "blood_group")
+    private String bloodGroup;
+
+    @Column(name = "emergency_contact")
+    private String emergencyContact;
+
+    @Column(name = "salary", precision = 10, scale = 2)
+    private BigDecimal salary;
+
+    @Column(name = "photo_id")
+    private String photoId;
+
+    @Column(name = "bank_account")
+    private String bankAccount;
+
+    @Column(name = "remarks")
+    private String remarks;
 
     @ManyToOne
     @JsonIgnoreProperties("personalInfos")
@@ -211,6 +242,136 @@ public class PersonalInfo implements Serializable {
         this.presentAddress = presentAddress;
     }
 
+    public String getNationalId() {
+        return nationalId;
+    }
+
+    public PersonalInfo nationalId(String nationalId) {
+        this.nationalId = nationalId;
+        return this;
+    }
+
+    public void setNationalId(String nationalId) {
+        this.nationalId = nationalId;
+    }
+
+    public String getTinNumber() {
+        return tinNumber;
+    }
+
+    public PersonalInfo tinNumber(String tinNumber) {
+        this.tinNumber = tinNumber;
+        return this;
+    }
+
+    public void setTinNumber(String tinNumber) {
+        this.tinNumber = tinNumber;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public PersonalInfo contactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+        return this;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public PersonalInfo email(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public PersonalInfo bloodGroup(String bloodGroup) {
+        this.bloodGroup = bloodGroup;
+        return this;
+    }
+
+    public void setBloodGroup(String bloodGroup) {
+        this.bloodGroup = bloodGroup;
+    }
+
+    public String getEmergencyContact() {
+        return emergencyContact;
+    }
+
+    public PersonalInfo emergencyContact(String emergencyContact) {
+        this.emergencyContact = emergencyContact;
+        return this;
+    }
+
+    public void setEmergencyContact(String emergencyContact) {
+        this.emergencyContact = emergencyContact;
+    }
+
+    public BigDecimal getSalary() {
+        return salary;
+    }
+
+    public PersonalInfo salary(BigDecimal salary) {
+        this.salary = salary;
+        return this;
+    }
+
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
+    }
+
+    public String getPhotoId() {
+        return photoId;
+    }
+
+    public PersonalInfo photoId(String photoId) {
+        this.photoId = photoId;
+        return this;
+    }
+
+    public void setPhotoId(String photoId) {
+        this.photoId = photoId;
+    }
+
+    public String getBankAccount() {
+        return bankAccount;
+    }
+
+    public PersonalInfo bankAccount(String bankAccount) {
+        this.bankAccount = bankAccount;
+        return this;
+    }
+
+    public void setBankAccount(String bankAccount) {
+        this.bankAccount = bankAccount;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public PersonalInfo remarks(String remarks) {
+        this.remarks = remarks;
+        return this;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
     public Department getDepartment() {
         return department;
     }
@@ -272,6 +433,16 @@ public class PersonalInfo implements Serializable {
             ", religion='" + getReligion() + "'" +
             ", permanentAddress='" + getPermanentAddress() + "'" +
             ", presentAddress='" + getPresentAddress() + "'" +
+            ", nationalId='" + getNationalId() + "'" +
+            ", tinNumber='" + getTinNumber() + "'" +
+            ", contactNumber='" + getContactNumber() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", bloodGroup='" + getBloodGroup() + "'" +
+            ", emergencyContact='" + getEmergencyContact() + "'" +
+            ", salary=" + getSalary() +
+            ", photoId='" + getPhotoId() + "'" +
+            ", bankAccount='" + getBankAccount() + "'" +
+            ", remarks='" + getRemarks() + "'" +
             "}";
     }
 }
