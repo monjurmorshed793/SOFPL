@@ -11,6 +11,7 @@ import { IDepartment } from 'app/shared/model/department.model';
 import { DepartmentService } from 'app/entities/department';
 import { IDesignation } from 'app/shared/model/designation.model';
 import { DesignationService } from 'app/entities/designation';
+import { JhiImageUploadComponent } from 'app/shared/image-upload/image-upload.component';
 
 @Component({
     selector: 'jhi-personal-info-update',
@@ -24,6 +25,7 @@ export class PersonalInfoUpdateComponent implements OnInit {
 
     designations: IDesignation[];
     birthDateDp: any;
+    empPhoto: any;
 
     constructor(
         protected jhiAlertService: JhiAlertService,
@@ -65,6 +67,11 @@ export class PersonalInfoUpdateComponent implements OnInit {
         } else {
             this.subscribeToSaveResponse(this.personalInfoService.create(this.personalInfo));
         }
+    }
+
+    uploadFile() {
+        console.log('hey uploading.....');
+        console.log(this.empPhoto);
     }
 
     protected subscribeToSaveResponse(result: Observable<HttpResponse<IPersonalInfo>>) {

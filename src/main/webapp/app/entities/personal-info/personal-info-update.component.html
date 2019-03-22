@@ -7,41 +7,44 @@
                 <div class="form-group" [hidden]="!personalInfo.id">
                     <label for="id">ID</label>
                     <input type="text" class="form-control" id="id" name="id"
-                        [(ngModel)]="personalInfo.id" readonly />
+                           [(ngModel)]="personalInfo.id" readonly/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_employeeId">Employee Id</label>
                     <input type="text" class="form-control" name="employeeId" id="field_employeeId"
-                        [(ngModel)]="personalInfo.employeeId" />
+                           [(ngModel)]="personalInfo.employeeId"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_fullName">Full Name</label>
                     <input type="text" class="form-control" name="fullName" id="field_fullName"
-                        [(ngModel)]="personalInfo.fullName" />
+                           [(ngModel)]="personalInfo.fullName"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_fathersName">Fathers Name</label>
                     <input type="text" class="form-control" name="fathersName" id="field_fathersName"
-                        [(ngModel)]="personalInfo.fathersName" />
+                           [(ngModel)]="personalInfo.fathersName"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_mothersName">Mothers Name</label>
                     <input type="text" class="form-control" name="mothersName" id="field_mothersName"
-                        [(ngModel)]="personalInfo.mothersName" />
+                           [(ngModel)]="personalInfo.mothersName"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_birthDate">Birth Date</label>
                     <div class="input-group">
-                        <input id="field_birthDate" type="text" class="form-control" name="birthDate" ngbDatepicker  #birthDateDp="ngbDatepicker" [(ngModel)]="personalInfo.birthDate"
+                        <input id="field_birthDate" type="text" class="form-control" name="birthDate" ngbDatepicker
+                               #birthDateDp="ngbDatepicker" [(ngModel)]="personalInfo.birthDate"
                         />
                         <span class="input-group-append">
-                            <button type="button" class="btn btn-secondary" (click)="birthDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                            <button type="button" class="btn btn-secondary" (click)="birthDateDp.toggle()"><fa-icon
+                                [icon]="'calendar-alt'"></fa-icon></button>
                         </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_maritalStatus">Marital Status</label>
-                    <select class="form-control" name="maritalStatus" [(ngModel)]="personalInfo.maritalStatus" id="field_maritalStatus" >
+                    <select class="form-control" name="maritalStatus" [(ngModel)]="personalInfo.maritalStatus"
+                            id="field_maritalStatus">
                         <option value="MARRIED">MARRIED</option>
                         <option value="UNMARRIED">UNMARRIED</option>
                         <option value="SEPARATED">SEPARATED</option>
@@ -49,7 +52,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_gender">Gender</label>
-                    <select class="form-control" name="gender" [(ngModel)]="personalInfo.gender" id="field_gender" >
+                    <select class="form-control" name="gender" [(ngModel)]="personalInfo.gender" id="field_gender">
                         <option value="MALE">MALE</option>
                         <option value="FEMALE">FEMALE</option>
                         <option value="OTHERS">OTHERS</option>
@@ -57,7 +60,8 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_religion">Religion</label>
-                    <select class="form-control" name="religion" [(ngModel)]="personalInfo.religion" id="field_religion" >
+                    <select class="form-control" name="religion" [(ngModel)]="personalInfo.religion"
+                            id="field_religion">
                         <option value="ISLAM">ISLAM</option>
                         <option value="HINDU">HINDU</option>
                         <option value="BUDDHIST">BUDDHIST</option>
@@ -68,87 +72,105 @@
                 <div class="form-group">
                     <label class="form-control-label" for="field_permanentAddress">Permanent Address</label>
                     <input type="text" class="form-control" name="permanentAddress" id="field_permanentAddress"
-                        [(ngModel)]="personalInfo.permanentAddress" />
+                           [(ngModel)]="personalInfo.permanentAddress"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_presentAddress">Present Address</label>
                     <input type="text" class="form-control" name="presentAddress" id="field_presentAddress"
-                        [(ngModel)]="personalInfo.presentAddress" />
+                           [(ngModel)]="personalInfo.presentAddress"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_nationalId">National Id</label>
                     <input type="text" class="form-control" name="nationalId" id="field_nationalId"
-                        [(ngModel)]="personalInfo.nationalId" />
+                           [(ngModel)]="personalInfo.nationalId"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_tinNumber">Tin Number</label>
                     <input type="text" class="form-control" name="tinNumber" id="field_tinNumber"
-                        [(ngModel)]="personalInfo.tinNumber" />
+                           [(ngModel)]="personalInfo.tinNumber"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_contactNumber">Contact Number</label>
                     <input type="text" class="form-control" name="contactNumber" id="field_contactNumber"
-                        [(ngModel)]="personalInfo.contactNumber" />
+                           [(ngModel)]="personalInfo.contactNumber"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_email">Email</label>
                     <input type="text" class="form-control" name="email" id="field_email"
-                        [(ngModel)]="personalInfo.email" />
+                           [(ngModel)]="personalInfo.email"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_bloodGroup">Blood Group</label>
                     <input type="text" class="form-control" name="bloodGroup" id="field_bloodGroup"
-                        [(ngModel)]="personalInfo.bloodGroup" />
+                           [(ngModel)]="personalInfo.bloodGroup"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_emergencyContact">Emergency Contact</label>
                     <input type="text" class="form-control" name="emergencyContact" id="field_emergencyContact"
-                        [(ngModel)]="personalInfo.emergencyContact" />
+                           [(ngModel)]="personalInfo.emergencyContact"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_salary">Salary</label>
                     <input type="number" class="form-control" name="salary" id="field_salary"
-                        [(ngModel)]="personalInfo.salary" />
+                           [(ngModel)]="personalInfo.salary"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_photoId">Photo Id</label>
                     <input type="text" class="form-control" name="photoId" id="field_photoId"
-                        [(ngModel)]="personalInfo.photoId" />
+                           [(ngModel)]="personalInfo.photoId"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_bankAccount">Bank Account</label>
                     <input type="text" class="form-control" name="bankAccount" id="field_bankAccount"
-                        [(ngModel)]="personalInfo.bankAccount" />
+                           [(ngModel)]="personalInfo.bankAccount"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_remarks">Remarks</label>
                     <input type="text" class="form-control" name="remarks" id="field_remarks"
-                        [(ngModel)]="personalInfo.remarks" />
+                           [(ngModel)]="personalInfo.remarks"/>
                 </div>
 
                 <div class="form-group">
                     <label class="form-control-label" for="field_department">Department</label>
-                    <select class="form-control" id="field_department" name="department" [(ngModel)]="personalInfo.department" >
+                    <select class="form-control" id="field_department" name="department"
+                            [(ngModel)]="personalInfo.department">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="departmentOption.id === personalInfo.department?.id ? personalInfo.department : departmentOption" *ngFor="let departmentOption of departments; trackBy: trackDepartmentById">{{departmentOption.id}}</option>
+                        <option
+                            [ngValue]="departmentOption.id === personalInfo.department?.id ? personalInfo.department : departmentOption"
+                            *ngFor="let departmentOption of departments; trackBy: trackDepartmentById">
+                            {{departmentOption.id}}
+                        </option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_designation">Designation</label>
-                    <select class="form-control" id="field_designation" name="designation" [(ngModel)]="personalInfo.designation" >
+                    <select class="form-control" id="field_designation" name="designation"
+                            [(ngModel)]="personalInfo.designation">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="designationOption.id === personalInfo.designation?.id ? personalInfo.designation : designationOption" *ngFor="let designationOption of designations; trackBy: trackDesignationById">{{designationOption.id}}</option>
+                        <option
+                            [ngValue]="designationOption.id === personalInfo.designation?.id ? personalInfo.designation : designationOption"
+                            *ngFor="let designationOption of designations; trackBy: trackDesignationById">
+                            {{designationOption.id}}
+                        </option>
                     </select>
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
                 </button>
-                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                        class="btn btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
                 </button>
             </div>
         </form>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-8">
+        <br />
+        <jhi-image-upload></jhi-image-upload>
     </div>
 </div>
