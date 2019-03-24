@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory
 import scala.concurrent.duration._
 
 /**
- * Performance test for the PersonalInfo entity.
+ * Performance test for the Equipment entity.
  */
-class PersonalInfoGatlingTest extends Simulation {
+class EquipmentGatlingTest extends Simulation {
 
     val context: LoggerContext = LoggerFactory.getILoggerFactory.asInstanceOf[LoggerContext]
     // Log all HTTP requests
@@ -43,7 +43,7 @@ class PersonalInfoGatlingTest extends Simulation {
         "Authorization" -> "${access_token}"
     )
 
-    val scn = scenario("Test the PersonalInfo entity")
+    val scn = scenario("Test the Equipment entity")
         .exec(http("First unauthenticated request")
         .get("/api/account")
         .headers(headers_http)
@@ -62,48 +62,30 @@ class PersonalInfoGatlingTest extends Simulation {
         .check(status.is(200)))
         .pause(10)
         .repeat(2) {
-            exec(http("Get all personalInfos")
-            .get("/api/personal-infos")
+            exec(http("Get all equipment")
+            .get("/api/equipment")
             .headers(headers_http_authenticated)
             .check(status.is(200)))
             .pause(10 seconds, 20 seconds)
-            .exec(http("Create new personalInfo")
-            .post("/api/personal-infos")
+            .exec(http("Create new equipment")
+            .post("/api/equipment")
             .headers(headers_http_authenticated)
             .body(StringBody("""{
                 "id":null
-                , "employeeId":"SAMPLE_TEXT"
-                , "fullName":"SAMPLE_TEXT"
-                , "fathersName":"SAMPLE_TEXT"
-                , "mothersName":"SAMPLE_TEXT"
-                , "birthDate":"2020-01-01T00:00:00.000Z"
-                , "maritalStatus":"MARRIED"
-                , "gender":"MALE"
-                , "religion":"ISLAM"
-                , "permanentAddress":"SAMPLE_TEXT"
-                , "presentAddress":"SAMPLE_TEXT"
-                , "nationalId":"SAMPLE_TEXT"
-                , "tinNumber":"SAMPLE_TEXT"
-                , "contactNumber":"SAMPLE_TEXT"
-                , "email":"SAMPLE_TEXT"
-                , "bloodGroup":"SAMPLE_TEXT"
-                , "emergencyContact":"SAMPLE_TEXT"
-                , "salary":"0"
-                , "photoId":"SAMPLE_TEXT"
-                , "bankAccount":"SAMPLE_TEXT"
-                , "remarks":"SAMPLE_TEXT"
+                , "name":"SAMPLE_TEXT"
+                , "price":"0"
                 }""")).asJSON
             .check(status.is(201))
-            .check(headerRegex("Location", "(.*)").saveAs("new_personalInfo_url"))).exitHereIfFailed
+            .check(headerRegex("Location", "(.*)").saveAs("new_equipment_url"))).exitHereIfFailed
             .pause(10)
             .repeat(5) {
-                exec(http("Get created personalInfo")
-                .get("${new_personalInfo_url}")
+                exec(http("Get created equipment")
+                .get("${new_equipment_url}")
                 .headers(headers_http_authenticated))
                 .pause(10)
             }
-            .exec(http("Delete created personalInfo")
-            .delete("${new_personalInfo_url}")
+            .exec(http("Delete created equipment")
+            .delete("${new_equipment_url}")
             .headers(headers_http_authenticated))
             .pause(10)
         }

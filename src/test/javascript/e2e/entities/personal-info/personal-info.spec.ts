@@ -50,6 +50,16 @@ describe('PersonalInfo e2e test', () => {
             personalInfoUpdatePage.religionSelectLastOption(),
             personalInfoUpdatePage.setPermanentAddressInput('permanentAddress'),
             personalInfoUpdatePage.setPresentAddressInput('presentAddress'),
+            personalInfoUpdatePage.setNationalIdInput('nationalId'),
+            personalInfoUpdatePage.setTinNumberInput('tinNumber'),
+            personalInfoUpdatePage.setContactNumberInput('contactNumber'),
+            personalInfoUpdatePage.setEmailInput('email'),
+            personalInfoUpdatePage.setBloodGroupInput('bloodGroup'),
+            personalInfoUpdatePage.setEmergencyContactInput('emergencyContact'),
+            personalInfoUpdatePage.setSalaryInput('5'),
+            personalInfoUpdatePage.setPhotoIdInput('photoId'),
+            personalInfoUpdatePage.setBankAccountInput('bankAccount'),
+            personalInfoUpdatePage.setRemarksInput('remarks'),
             personalInfoUpdatePage.departmentSelectLastOption(),
             personalInfoUpdatePage.designationSelectLastOption()
         ]);
@@ -60,6 +70,16 @@ describe('PersonalInfo e2e test', () => {
         expect(await personalInfoUpdatePage.getBirthDateInput()).to.eq('2000-12-31');
         expect(await personalInfoUpdatePage.getPermanentAddressInput()).to.eq('permanentAddress');
         expect(await personalInfoUpdatePage.getPresentAddressInput()).to.eq('presentAddress');
+        expect(await personalInfoUpdatePage.getNationalIdInput()).to.eq('nationalId');
+        expect(await personalInfoUpdatePage.getTinNumberInput()).to.eq('tinNumber');
+        expect(await personalInfoUpdatePage.getContactNumberInput()).to.eq('contactNumber');
+        expect(await personalInfoUpdatePage.getEmailInput()).to.eq('email');
+        expect(await personalInfoUpdatePage.getBloodGroupInput()).to.eq('bloodGroup');
+        expect(await personalInfoUpdatePage.getEmergencyContactInput()).to.eq('emergencyContact');
+        expect(await personalInfoUpdatePage.getSalaryInput()).to.eq('5');
+        expect(await personalInfoUpdatePage.getPhotoIdInput()).to.eq('photoId');
+        expect(await personalInfoUpdatePage.getBankAccountInput()).to.eq('bankAccount');
+        expect(await personalInfoUpdatePage.getRemarksInput()).to.eq('remarks');
         await personalInfoUpdatePage.save();
         expect(await personalInfoUpdatePage.getSaveButton().isPresent()).to.be.false;
 

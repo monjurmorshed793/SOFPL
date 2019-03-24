@@ -77,8 +77,7 @@ public class PersonalInfoService {
      * @param id the id of the entity
      */
     public void delete(Long id) {
-        log.debug("Request to delete PersonalInfo : {}", id);
-        personalInfoRepository.deleteById(id);
+        log.debug("Request to delete PersonalInfo : {}", id);        personalInfoRepository.deleteById(id);
         personalInfoSearchRepository.deleteById(id);
     }
 

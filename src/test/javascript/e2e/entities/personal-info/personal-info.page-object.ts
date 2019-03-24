@@ -36,6 +36,16 @@ export class PersonalInfoUpdatePage {
     religionSelect = element(by.id('field_religion'));
     permanentAddressInput = element(by.id('field_permanentAddress'));
     presentAddressInput = element(by.id('field_presentAddress'));
+    nationalIdInput = element(by.id('field_nationalId'));
+    tinNumberInput = element(by.id('field_tinNumber'));
+    contactNumberInput = element(by.id('field_contactNumber'));
+    emailInput = element(by.id('field_email'));
+    bloodGroupInput = element(by.id('field_bloodGroup'));
+    emergencyContactInput = element(by.id('field_emergencyContact'));
+    salaryInput = element(by.id('field_salary'));
+    photoIdInput = element(by.id('field_photoId'));
+    bankAccountInput = element(by.id('field_bankAccount'));
+    remarksInput = element(by.id('field_remarks'));
     departmentSelect = element(by.id('field_department'));
     designationSelect = element(by.id('field_designation'));
 
@@ -142,6 +152,86 @@ export class PersonalInfoUpdatePage {
 
     async getPresentAddressInput() {
         return this.presentAddressInput.getAttribute('value');
+    }
+
+    async setNationalIdInput(nationalId) {
+        await this.nationalIdInput.sendKeys(nationalId);
+    }
+
+    async getNationalIdInput() {
+        return this.nationalIdInput.getAttribute('value');
+    }
+
+    async setTinNumberInput(tinNumber) {
+        await this.tinNumberInput.sendKeys(tinNumber);
+    }
+
+    async getTinNumberInput() {
+        return this.tinNumberInput.getAttribute('value');
+    }
+
+    async setContactNumberInput(contactNumber) {
+        await this.contactNumberInput.sendKeys(contactNumber);
+    }
+
+    async getContactNumberInput() {
+        return this.contactNumberInput.getAttribute('value');
+    }
+
+    async setEmailInput(email) {
+        await this.emailInput.sendKeys(email);
+    }
+
+    async getEmailInput() {
+        return this.emailInput.getAttribute('value');
+    }
+
+    async setBloodGroupInput(bloodGroup) {
+        await this.bloodGroupInput.sendKeys(bloodGroup);
+    }
+
+    async getBloodGroupInput() {
+        return this.bloodGroupInput.getAttribute('value');
+    }
+
+    async setEmergencyContactInput(emergencyContact) {
+        await this.emergencyContactInput.sendKeys(emergencyContact);
+    }
+
+    async getEmergencyContactInput() {
+        return this.emergencyContactInput.getAttribute('value');
+    }
+
+    async setSalaryInput(salary) {
+        await this.salaryInput.sendKeys(salary);
+    }
+
+    async getSalaryInput() {
+        return this.salaryInput.getAttribute('value');
+    }
+
+    async setPhotoIdInput(photoId) {
+        await this.photoIdInput.sendKeys(photoId);
+    }
+
+    async getPhotoIdInput() {
+        return this.photoIdInput.getAttribute('value');
+    }
+
+    async setBankAccountInput(bankAccount) {
+        await this.bankAccountInput.sendKeys(bankAccount);
+    }
+
+    async getBankAccountInput() {
+        return this.bankAccountInput.getAttribute('value');
+    }
+
+    async setRemarksInput(remarks) {
+        await this.remarksInput.sendKeys(remarks);
+    }
+
+    async getRemarksInput() {
+        return this.remarksInput.getAttribute('value');
     }
 
     async departmentSelectLastOption() {
